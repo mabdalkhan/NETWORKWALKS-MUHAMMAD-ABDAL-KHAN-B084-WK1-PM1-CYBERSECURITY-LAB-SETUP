@@ -1,114 +1,101 @@
 # NetworkWalks Week 1 — Cybersecurity Lab Setup
 
-This repository contains my completed Week 1 project for the **NetworkWalks Cybersecurity and Ethical Hacking Internship — Batch B084**.
+**Program:** NetworkWalks Cybersecurity and Ethical Hacking Internship  
+**Batch:** B084  
+**Project:** WK1-PM1 — VirtualBox and Kali Linux Lab Setup  
+**Author:** Muhammad Abdal Khan
 
-The main assignment involved setting up Kali Linux in VirtualBox and configuring the virtual network, connectivity, shared folders, and VM snapshot. I also completed three optional projects covering Windows 10, Android-x86, and SOC/Wireshark practice.
+This repository documents my required Week 1 lab setup and the three optional projects I completed: Windows 10 virtualization, Android-x86 virtualization, and six SOC/Wireshark browser labs.
 
 ## Project Overview
 
-| Section            | Project                     | Status    |
-| ------------------ | --------------------------- | --------- |
-| Main Assignment    | Kali Linux Lab Setup        | Completed |
-| Optional Project 1 | Windows 10 Virtual Machine  | Completed |
-| Optional Project 2 | Android-x86 Virtual Machine | Completed |
-| Optional Project 3 | SOC/Wireshark — Six Labs    | Completed |
+| Type | Project | Description |
+|---|---|---|
+| **Required Week 1 task** | Kali Linux lab setup | Configure VirtualBox, Kali Linux, the NAT Network, host–guest integration, connectivity, and a VM snapshot. |
+| Optional project 1 | Windows 10 VM | Install Windows 10 in VirtualBox and test network connectivity with Kali Linux. |
+| Optional project 2 | Android-x86 VM | Install Android-x86 in VirtualBox and test network connectivity with Kali Linux. |
+| Optional project 3 | SOC/Wireshark labs | Complete six browser-based network traffic investigation labs. |
+
+**Screenshots:** [Open the screenshots folder](https://github.com/mabdalkhan/NETWORKWALKS-MUHAMMAD-ABDAL-KHAN-B084-WK1-PM1-CYBERSECURITY-LAB-SETUP/tree/main/screenshots)
 
 ---
 
-# Part 1 — Main Week 1 Assignment
+# Part 1 — Required Week 1 Assignment
 
 ## 1. Kali Linux Lab Setup
 
 ### Objective
 
-Set up a Kali Linux virtual machine in Oracle VirtualBox, configure the required NAT Network, verify connectivity, enable host–guest integration, and create a VM snapshot.
+Set up Kali Linux in Oracle VirtualBox, configure the required NAT Network and static IP address, enable host–guest integration, test connectivity, and create a VM snapshot.
 
-### Tools Used
+### Configuration
 
-* Oracle VirtualBox
-* Kali Linux
-* VirtualBox NAT Network
-* NetworkManager
-* Linux networking commands
-
-### Network Configuration
-
-| Parameter        | Configuration                 |
-| ---------------- | ----------------------------- |
-| Network Name     | `NatNetwork`                  |
-| Network Type     | NAT Network                   |
-| Subnet           | `10.0.0.0/24`                 |
-| Kali Linux IP    | `10.0.0.2/24`                 |
-| Default Gateway  | `10.0.0.1`                    |
-| DNS Server       | `8.8.8.8`                     |
-| Shared Clipboard | Bidirectional                 |
-| Drag-and-Drop    | Bidirectional                 |
-| Shared Folder    | `downloads`                   |
-| VM Snapshot      | `WK1-PM1-Kali-Lab-Configured` |
+| Setting | Required value |
+|---|---|
+| Virtualization platform | Oracle VirtualBox |
+| Virtual machine | Kali Linux |
+| Network type | NAT Network |
+| NAT Network name | `NatNetwork` |
+| Network subnet | `10.0.0.0/24` |
+| Kali IPv4 address | `10.0.0.2/24` |
+| Default gateway | `10.0.0.1` |
+| DNS server | `8.8.8.8` or the DNS value actually configured |
+| Shared Clipboard | Bidirectional |
+| Drag-and-Drop | Bidirectional |
+| Shared folder | Host folder named `downloads` |
+| Snapshot | `WK1-PM1-Kali-Lab-Configured` |
 
 ### Work Completed
 
 1. Installed VirtualBox and imported Kali Linux.
-2. Created the required NAT Network.
-3. Configured the Kali virtual network adapter.
-4. Set the required static IPv4 address.
-5. Configured the gateway and DNS settings.
-6. Enabled shared clipboard and drag-and-drop.
-7. Configured the shared folder between Windows and Kali.
-8. Checked the IP address and routing configuration.
-9. Tested network connectivity and Internet access.
-10. Checked shared-folder access and host–guest integration.
-11. Created a snapshot of the configured Kali Linux VM.
+2. Created the `NatNetwork` NAT Network with the required subnet.
+3. Connected the Kali VM to the NAT Network.
+4. Configured the required static IPv4 address, gateway, and DNS settings.
+5. Enabled bidirectional shared clipboard and drag-and-drop.
+6. Configured the shared folder between Windows and Kali Linux.
+7. Checked IP addressing and routing.
+8. Tested gateway, external IP, DNS, and Internet connectivity.
+9. Tested shared-folder access and host–guest integration.
+10. Created a baseline snapshot of the Kali VM.
 
-### Screenshots — Main Week 1 Assignment
+### Evidence — Required Week 1 Task
 
-All screenshots for the required assignment are organized in `screenshots/kali/`.
+The screenshots for the main assignment are stored in the repository's `screenshots` folder.
 
-| No. | Screenshot                                                                     | Description                           |
-| --- | ------------------------------------------------------------------------------ | ------------------------------------- |
-| 1   | [NAT Network Configuration](screenshots/kali/01-nat-network-configuration.png) | NAT Network settings                  |
-| 2   | [Kali Network Adapter](screenshots/kali/02-kali-network-adapter.png)           | Virtual network adapter configuration |
-| 3   | [Clipboard and Drag-and-Drop](screenshots/kali/03-clipboard-dragdrop.png)      | Host–guest integration settings       |
-| 4   | [Shared Folder](screenshots/kali/04-shared-folder.png)                         | Shared-folder configuration           |
-| 5   | [Kali IP Configuration](screenshots/kali/05-kali-ip-configuration.png)         | Static IPv4 settings                  |
-| 6   | [IP and Route Verification](screenshots/kali/06-ip-and-route-verification.png) | IP address and routing output         |
-| 7   | [Internet Connectivity](screenshots/kali/07-internet-connectivity.png)         | Connectivity test results             |
-| 8   | [Shared Folder Test](screenshots/kali/08-shared-folder-test.png)               | Shared-folder access                  |
-| 9   | [Kali VM Snapshot](screenshots/kali/09-kali-snapshot.png)                      | Saved VM snapshot                     |
+**[Open Week 1 screenshots](https://github.com/mabdalkhan/NETWORKWALKS-MUHAMMAD-ABDAL-KHAN-B084-WK1-PM1-CYBERSECURITY-LAB-SETUP/tree/main/screenshots)**
+
+The evidence covers the NAT Network, Kali adapter, clipboard and drag-and-drop settings, shared-folder configuration, IP configuration, connectivity checks, shared-folder test, and VM snapshot.
 
 ---
 
 # Part 2 — Optional Projects
 
-The following projects were completed in addition to the main Week 1 assignment.
-
-## 2. Windows 10 Virtual Machine
+## 2. Optional Project: Windows 10 Virtual Machine
 
 ### Objective
 
-Install Windows 10 in VirtualBox, connect it to the same NAT Network as Kali Linux, configure the network, and test connectivity between the two machines.
+Install Windows 10 in VirtualBox, connect it to the same NAT Network as Kali Linux, set its required IPv4 configuration, and test connectivity.
 
-### Configuration
+### Network Configuration
 
-| Parameter        | Value           |
-| ---------------- | --------------- |
-| Virtual Machine  | `Windows10-Lab` |
-| Operating System | Windows 10      |
-| Network Type     | NAT Network     |
-| IPv4 Address     | `10.0.0.10/24`  |
-| Gateway          | `10.0.0.1`      |
-| DNS              | `8.8.8.8`       |
+| Setting | Target value |
+|---|---|
+| VM name | `Windows10-Lab` |
+| Network type | NAT Network |
+| IPv4 address | `10.0.0.10/24` |
+| Gateway | `10.0.0.1` |
+| DNS | `8.8.8.8` |
 
 ### Work Completed
 
 1. Obtained the Windows 10 installation ISO.
-2. Created and configured the virtual machine.
+2. Created and configured the Windows 10 VM.
 3. Installed Windows 10.
 4. Connected the VM to `NatNetwork`.
-5. Configured the required IPv4 settings.
-6. Tested connectivity from Windows to Kali.
+5. Configured its IPv4 settings.
+6. Tested Windows-to-Kali connectivity.
 7. Tested external IP connectivity.
-8. Tested connectivity from Kali to Windows.
+8. Tested Kali-to-Windows connectivity.
 
 ### Connectivity Commands
 
@@ -125,47 +112,41 @@ From Kali Linux:
 ping -c 4 10.0.0.10
 ```
 
-### Screenshots — Windows 10
+### Evidence — Windows 10
 
-All Windows 10 evidence is organized in `screenshots/windows10/`.
+**[Open screenshots folder](https://github.com/mabdalkhan/NETWORKWALKS-MUHAMMAD-ABDAL-KHAN-B084-WK1-PM1-CYBERSECURITY-LAB-SETUP/tree/main/screenshots)**
 
-| No. | Screenshot                                                                        | Description               |
-| --- | --------------------------------------------------------------------------------- | ------------------------- |
-| 1   | [Windows VM Configuration](screenshots/windows10/01-windows-vm-configuration.png) | Virtual machine settings  |
-| 2   | [Windows IP Configuration](screenshots/windows10/02-windows-ip-configuration.png) | IPv4 settings             |
-| 3   | [Windows-to-Kali Ping](screenshots/windows10/03-windows-to-kali-ping.png)         | Connectivity test         |
-| 4   | [Windows Internet Test](screenshots/windows10/04-windows-internet-test.png)       | External connectivity     |
-| 5   | [Kali-to-Windows Ping](screenshots/windows10/05-kali-to-windows-ping.png)         | Reverse connectivity test |
+The relevant evidence includes the Windows VM settings, IPv4 configuration, Windows-to-Kali test, external connectivity test, and Kali-to-Windows test.
 
 ---
 
-## 3. Android-x86 Virtual Machine
+## 3. Optional Project: Android-x86 Virtual Machine
 
 ### Objective
 
-Install Android-x86 in VirtualBox, connect it to the shared NAT Network, configure the required IP address, and test connectivity with Kali Linux.
+Install Android-x86 in VirtualBox, connect it to the shared NAT Network, configure the required IPv4 address, and test connectivity with Kali Linux and the Internet.
 
-### Configuration
+### Network Configuration
 
-| Parameter        | Value           |
-| ---------------- | --------------- |
-| Virtual Machine  | `Android9-Lab`  |
-| Operating System | Android-x86 9.0 |
-| Network Type     | NAT Network     |
-| IPv4 Address     | `10.0.0.9/24`   |
-| Gateway          | `10.0.0.1`      |
-| DNS              | `8.8.8.8`       |
+| Setting | Target value |
+|---|---|
+| VM name | `Android9-Lab` |
+| Operating system | Android-x86 9.0 |
+| Network type | NAT Network |
+| IPv4 address | `10.0.0.9/24` |
+| Gateway | `10.0.0.1` |
+| DNS | `8.8.8.8` |
 
 ### Work Completed
 
 1. Obtained the Android-x86 ISO.
-2. Created and configured the Android virtual machine.
+2. Created and configured the Android VM.
 3. Installed Android-x86.
-4. Connected the VM to `NatNetwork`.
-5. Configured the required IPv4 settings.
-6. Tested connectivity between Android and Kali.
+4. Connected it to `NatNetwork`.
+5. Configured its IPv4 settings.
+6. Tested Android-to-Kali connectivity.
 7. Tested external IP connectivity.
-8. Tested connectivity from Kali to Android.
+8. Tested Kali-to-Android connectivity.
 
 ### Connectivity Commands
 
@@ -182,106 +163,73 @@ From Kali Linux:
 ping -c 4 10.0.0.9
 ```
 
-### Screenshots — Android-x86
+### Evidence — Android-x86
 
-All Android evidence is organized in `screenshots/android/`.
+**[Open screenshots folder](https://github.com/mabdalkhan/NETWORKWALKS-MUHAMMAD-ABDAL-KHAN-B084-WK1-PM1-CYBERSECURITY-LAB-SETUP/tree/main/screenshots)**
 
-| No. | Screenshot                                                                      | Description                 |
-| --- | ------------------------------------------------------------------------------- | --------------------------- |
-| 1   | [Android VM Configuration](screenshots/android/01-android-vm-configuration.png) | Virtual machine settings    |
-| 2   | [Android Desktop](screenshots/android/02-android-desktop.png)                   | Running Android environment |
-| 3   | [Android IP Configuration](screenshots/android/03-android-ip-configuration.png) | IPv4 settings               |
-| 4   | [Android-to-Kali Ping](screenshots/android/04-android-to-kali-ping.png)         | Connectivity test           |
-| 5   | [Android Internet Test](screenshots/android/05-android-internet-test.png)       | External connectivity       |
-| 6   | [Kali-to-Android Ping](screenshots/android/06-kali-to-android-ping.png)         | Reverse connectivity test   |
+The relevant evidence includes the Android VM configuration, desktop, IPv4 settings, Android-to-Kali test, external connectivity test, and Kali-to-Android test.
 
 ---
 
-## 4. SOC/Wireshark — Six Labs
+## 4. Optional Project: SOC/Wireshark — Six Labs
 
 ### Objective
 
-Complete six NetworkWalks SOC browser labs involving network traffic analysis and investigation.
+Complete the six NetworkWalks browser-based SOC labs, each containing ten tasks involving analysis of supplied network traffic captures.
 
 ### Labs Completed
 
-| No. | Lab                            | Main Task                                                |
-| --- | ------------------------------ | -------------------------------------------------------- |
-| 1   | Identify the Attacker's IP     | Identify the suspected attacker's IP address             |
-| 2   | Follow TCP Stream 1            | Reconstruct and inspect a TCP conversation               |
-| 3   | Follow TCP Stream, Part 2      | Continue TCP stream analysis and investigate hidden data |
-| 4   | HTTP Plain Text Credentials    | Identify credentials in the supplied HTTP capture        |
-| 5   | Catch the Brute Force Attacker | Investigate repeated login attempts                      |
-| 6   | Catch the Call Scammer         | Analyze the supplied traffic and call recording          |
-
-Each lab contained ten tasks.
+1. **Identify the Attacker's IP** — inspect the capture to identify the suspected attacker's address.
+2. **Follow TCP Stream 1** — reconstruct and inspect a TCP conversation.
+3. **Follow TCP Stream, Part 2** — continue TCP stream analysis and investigate hidden data.
+4. **HTTP Plain Text Credentials** — inspect the supplied capture for credentials transmitted over HTTP.
+5. **Catch the Brute Force Attacker** — investigate repeated authentication attempts.
+6. **Catch the Call Scammer** — investigate the supplied capture and call recording.
 
 ### Skills Practised
 
-* Network traffic investigation
-* IP address identification
-* TCP stream analysis
-* HTTP traffic inspection
-* Clear-text credential identification
-* Brute-force activity investigation
-* VoIP-related incident analysis
+- Network traffic analysis
+- Source IP identification
+- TCP stream reconstruction
+- HTTP traffic inspection
+- Identification of clear-text credentials
+- Analysis of repeated login attempts
+- Investigation of a VoIP-related scenario
 
-### Screenshots — SOC/Wireshark
+### Evidence — SOC/Wireshark
 
-All Wireshark evidence is organized in `screenshots/wireshark/`.
+**[Open screenshots folder](https://github.com/mabdalkhan/NETWORKWALKS-MUHAMMAD-ABDAL-KHAN-B084-WK1-PM1-CYBERSECURITY-LAB-SETUP/tree/main/screenshots)**
 
-| No. | Screenshot                                                                             | Description                     |
-| --- | -------------------------------------------------------------------------------------- | ------------------------------- |
-| 1   | [Identify Attacker's IP](screenshots/wireshark/01-identify-attacker-ip.png)            | Attacker identification         |
-| 2   | [Follow TCP Stream 1](screenshots/wireshark/02-follow-tcp-stream-1.png)                | TCP stream analysis             |
-| 3   | [Follow TCP Stream, Part 2](screenshots/wireshark/03-follow-tcp-stream-part-2.png)     | Additional stream analysis      |
-| 4   | [HTTP Plain Text Credentials](screenshots/wireshark/04-http-plaintext-credentials.png) | HTTP credential investigation   |
-| 5   | [Brute Force Attacker](screenshots/wireshark/05-brute-force-attacker.png)              | Authentication attempt analysis |
-| 6   | [Call Scammer Investigation](screenshots/wireshark/06-call-scammer-investigation.png)  | Call investigation              |
+The relevant evidence includes completion screenshots from the six labs. Where one image does not show all tasks for a lab, include additional screenshots as needed.
 
 ---
 
-## 5. Troubleshooting and Key Takeaways
+## Verification Summary
 
-During this project, I worked with virtual machine configuration, network settings, static IP addressing, connectivity testing, and host–guest integration.
+| Area | Checks performed |
+|---|---|
+| Kali Linux | IP address, routing, gateway, Internet and DNS connectivity |
+| VirtualBox NAT Network | Network prefix and VM adapter configuration |
+| Shared folder | Host-to-Kali file access |
+| Clipboard and drag-and-drop | Host–guest integration tests |
+| Snapshot | Saved Kali baseline snapshot |
+| Windows 10 | Connectivity to Kali and external IP |
+| Android-x86 | Connectivity to Kali and external IP |
+| SOC/Wireshark | Completion of the six browser-based labs |
 
-The main things I focused on were:
+## Troubleshooting Notes
 
-* Checking IP addresses and subnet configuration.
-* Verifying the correct NAT Network was selected.
-* Checking routing and gateway settings.
-* Testing IP connectivity separately from DNS resolution.
-* Checking shared-folder access and permissions.
-* Verifying configurations through actual command output.
-* Organizing screenshots and technical documentation.
+The main checks during troubleshooting were the NAT Network selection, IP address and subnet, duplicate IP conflicts, gateway and DNS settings, connectivity versus DNS resolution, and host–guest integration support. Any specific issue and fix should be documented using the actual symptoms and results from the lab.
 
-Any specific issue and its solution should match the troubleshooting actually performed during the project.
-
-## 6. Repository Structure
+## Repository Layout
 
 ```text
 NETWORKWALKS-MUHAMMAD-ABDAL-KHAN-B084-WK1-PM1-CYBERSECURITY-LAB-SETUP/
-│
 ├── README.md
-│
 └── screenshots/
-    ├── kali/
-    ├── windows10/
-    ├── android/
-    └── wireshark/
+    └── [screenshots uploaded to this folder]
 ```
-
-The `kali/` directory contains screenshots for the required Week 1 assignment. The other three directories contain evidence for the optional projects.
 
 ## Conclusion
 
-I completed the required NetworkWalks Week 1 lab setup and worked through the optional Windows 10, Android-x86, and SOC/Wireshark projects.
-
-These tasks gave me practical experience with VirtualBox, network configuration, connectivity testing, troubleshooting, and network traffic investigation.
-
-This repository brings together the project configurations and supporting screenshots in one place.
-
-**Program:** NetworkWalks Cybersecurity and Ethical Hacking Internship
-**Batch:** B084
-**Project:** Week 1 — Cybersecurity Lab Setup and Optional Projects
-**Author:** Muhammad Abdal Khan
+I completed the required Week 1 Kali Linux lab setup and the additional Windows 10, Android-x86, and SOC/Wireshark projects. The work covered virtual machine configuration, static IP setup, connectivity testing, shared-folder and guest integration, snapshots, and network traffic investigation.
