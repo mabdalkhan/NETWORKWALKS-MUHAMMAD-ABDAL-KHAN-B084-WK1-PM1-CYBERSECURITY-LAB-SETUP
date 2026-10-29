@@ -287,8 +287,6 @@ The exercises provide introductory practical experience in network traffic analy
 | 5   | [Brute Force Attacker](screenshots/wireshark/05-brute-force-attacker.png)              | Repeated login attempt investigation |
 | 6   | [Call Scammer Investigation](screenshots/wireshark/06-call-scammer-investigation.png)  | VoIP-related investigation           |
 
-If a single screenshot does not demonstrate the completion of all ten tasks in a lab, include additional evidence where appropriate.
-
 These exercises were performed in the designated educational environment. The supplied captures are training material, not authorization to inspect unrelated networks.
 
 ---
